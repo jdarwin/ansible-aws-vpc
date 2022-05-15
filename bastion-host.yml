@@ -4,8 +4,6 @@
   connection: local
   gather_facts: no
   tasks:
-    - name: Import VPC setup vars
-      include_vars: vars/bastion_setup.yml
     - name:
       include_vars: vars/output_vars
     - name: create vprofile ec2 key
