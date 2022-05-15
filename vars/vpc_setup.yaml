@@ -9,7 +9,7 @@ PrivSub1Cidr: 172.20.4.0/24
 PrivSub1Cidr: 172.20.5.0/24
 PrivSub1Cidr: 172.20.6.0/24
 # Region
-region: "use-east-2"
+region: "us-west-2"
 # Zones
 zone1: us-west-2a
 zone2: us-west-2b
