@@ -11,8 +11,9 @@ PrivSub1Cidr: 172.20.6.0/24
 # Region
 region: "use-east-2"
 # Zones
-zone1: us-east-2a
-zone2: us-east-2b
-zone3: us-east-2c
+zone1: us-west-2a
+zone2: us-west-2b
+zone3: us-west-2c
+zone4: us-west-2d
 state: present
 
