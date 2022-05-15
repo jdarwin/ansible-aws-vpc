@@ -16,3 +16,6 @@ zone2: us-west-2b
 zone3: us-west-2c
 zone4: us-west-2d
 state: present
+# Bastion vars
+bastion_ami: ami-00af37d1144686454
+MYIP: 49.207.214.77/32
