@@ -14,9 +14,9 @@
         tenancy: default
         state: "{{state}}"
       register: vpcout
-    - debug:
-        var: vpcout
-    - name: create pub subnet in zone1
+    #    - debug:
+    #        var: vpcout
+    - name: create pub subnet 1 in zone1
       ec2_vpc_subnet:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
@@ -27,3 +27,25 @@
         resource_tags:
           Name: vprofile-pubsub1
       register: pubsub1_out
+    - name: create pub subnet 2 in zone2
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        az: "{{zone2}}"
+        state: "{{state}}"
+        cidr: "{{PubSub2Cidr}}"
+        map_public: yes
+        resource_tags:
+          Name: vprofile-pubsub2
+      register: pubsub2_out
+    - name: create pub subnet 3 in zone3
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        az: "{{zone3}}"
+        state: "{{state}}"
+        cidr: "{{PubSub3Cidr}}"
+        map_public: yes
+        resource_tags:
+          Name: vprofile-pubsub3
+      register: pubsub3_out
