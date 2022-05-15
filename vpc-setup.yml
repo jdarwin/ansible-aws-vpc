@@ -150,7 +150,7 @@
         igwid: "{{ igw_out.gateway_id }}"
         pubRTid: "{{ pubRT_out.route_table.id }}"
         NATGWid: "{{ NATGW_out.nat_gateway_id }}"
-        privRTid: "{{ privRT_out.route_tableid }}"\
+        privRTid: "{{ privRT_out.route_tableid }}"
         cacheable: yes
     - name: create var file with vpc details
       copy:
