@@ -32,7 +32,7 @@
             cidr_ip: "{{MYIP}}"
       register: BastionSG_out
     - name: creating baston host
-      ec2_key:
+      ec2:
         key_name: vprofile-key
         region: "{{region}}"
         instance_type: t2.micro
