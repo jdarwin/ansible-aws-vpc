@@ -84,7 +84,7 @@
       register: privsub3_out
     - name: INternet gw
       ec2_vpc_igw:
-        vpd_id: "{{vpcout.vpc.id}}"
+        vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         state: "{{state}}"
         resource_tags:
