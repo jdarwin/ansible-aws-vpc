@@ -47,5 +47,14 @@
             from_port: 80
             to_port: 80
             group_id: "{{ BastionSGid }}"
-
       register: vproELBSG_out
+    - name: update SG with it's own SG id
+      ec2_group:
+        name: vproStack-sg
+        description: Allow port 22
+        region: "{{ region }}"
+        vpc_id: "{{ vpcid }}"
+        purge_rules: no
+        rule:
+          - proto: all
+            group_id: "{{ vproStackSG_out.group_id }}"
