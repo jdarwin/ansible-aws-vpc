@@ -55,5 +55,5 @@
       blockinfile:
         path: vars/vpc-output_vars.yml
         backup: yes
-        blockinfile:
+        block:
           BastionSGid: "{{ BastionSG_out.group_id }}"
