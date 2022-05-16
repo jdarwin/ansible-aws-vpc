@@ -10,7 +10,7 @@
       include_vars: vars/vprostacksetup.yml
     - name: create vprofile ec2 key
       ec2_key:
-        name: vprokey
+        name: vprokey # ec2 key
         region: "{{ region }}"
       register: vprokey_out
     - name: save private key file in loginkey_vpro.pem
