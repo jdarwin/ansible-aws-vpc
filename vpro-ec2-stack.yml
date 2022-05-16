@@ -1,0 +1,21 @@
+---
+- name: setup vprofile app stack
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: import vpc setup vars
+      include_vars: vars/vpc-output_vars.yml
+    - name: import vprofile setup vars
+      include_vars: vars/vprostacksetup.yml
+    - name: create vprofile ec2 key
+      ec2_key:
+        name: vprofile-key
+        region: "{{ region }}"
+      register: vprokey_out
+    - name: save private key file in loginkey_vpro.pem
+      copy:
+        content: "{{ vprokey_out.key.private_key }}"
+        dest: "./loginkey_vpro.pem"
+        mode: 0600
+      when: vprokey_out.changed
