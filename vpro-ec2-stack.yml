@@ -31,7 +31,7 @@
             to_port: 80
             cidr_ip: 0.0.0.0/0
       register: vproELBSG_out
-    - name: SG for Vprofile stack
+    - name: Create Security Group for Vprofile stack
       ec2_group:
         name: vproStack-sg
         description: Allow port 22
@@ -44,17 +44,17 @@
             to_port: 80
             group_id: "{{ vproELBSG_out.group_id }}"
           - proto: tcp
-            from_port: 80
-            to_port: 80
+            from_port: 22
+            to_port: 22
             group_id: "{{ BastionSGid }}"
-      register: vproELBSG_out
-    - name: update SG with it's own SG id
+      register: vproStackSG_out
+    - name: Update Security Group with it's own SG id
       ec2_group:
         name: vproStack-sg
         description: Allow port 22
         region: "{{ region }}"
         vpc_id: "{{ vpcid }}"
-        purge_rules: no
+        purge_rules: no # makes lower lines idempotent
         rules:
           - proto: all
             group_id: "{{ vproStackSG_out.group_id }}"
