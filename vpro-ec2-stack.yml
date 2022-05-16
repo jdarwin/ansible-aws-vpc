@@ -5,7 +5,7 @@
   gather_facts: no
   tasks:
     - name: import vpc setup vars
-      include_vars: vars/vpc-output_vars.yml
+      include_vars: vars/vpc-output_vars
     - name: import vprofile setup vars
       include_vars: vars/vprostacksetup.yml
     - name: create vprofile ec2 key
