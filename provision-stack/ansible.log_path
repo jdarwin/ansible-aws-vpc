@@ -1,0 +1,161 @@
+2022-05-19 08:21:05,114 p=2129 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-pro as an inventory source
+
+2022-05-19 08:21:05,114 p=2129 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:21:05,118 p=2129 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:21:05,277 p=2129 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] ********************************************************************************************************************************************
+2022-05-19 08:21:05,287 p=2129 u=ubuntu n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2022-05-19 08:21:06,494 p=2129 u=ubuntu n=ansible | ok: [localhost]
+2022-05-19 08:21:06,511 p=2129 u=ubuntu n=ansible | TASK [Install  jdk, maven, git] **********************************************************************************************************************************************************************************
+2022-05-19 08:21:13,652 p=2129 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2022-05-19 08:21:43,708 p=2129 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2022-05-19 08:21:55,095 p=2129 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2022-05-19 08:21:55,112 p=2129 u=ubuntu n=ansible | TASK [Clone source code from github] *****************************************************************************************************************************************************************************
+2022-05-19 08:21:59,511 p=2129 u=ubuntu n=ansible | changed: [localhost]
+2022-05-19 08:21:59,525 p=2129 u=ubuntu n=ansible | TASK [mvn install command to build artifact] *********************************************************************************************************************************************************************
+2022-05-19 08:22:42,562 p=2129 u=ubuntu n=ansible | changed: [localhost]
+2022-05-19 08:22:42,584 p=2129 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] *************************************************************************************************************************************************************************
+2022-05-19 08:22:43,925 p=2129 u=ubuntu n=ansible | failed: [localhost] (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war) => {"ansible_loop_var": "item", "changed": false, "checksum": "22afedc681040c74bf1bcb35a63c80f8a3a1da57", "item": "/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war", "msg": "Destination directory files does not exist"}
+2022-05-19 08:22:43,930 p=2129 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:22:43,931 p=2129 u=ubuntu n=ansible | localhost                  : ok=4    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 08:31:58,494 p=6260 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-pro as an inventory source
+
+2022-05-19 08:31:58,495 p=6260 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:31:58,502 p=6260 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:31:59,012 p=6260 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] ********************************************************************************************************************************************
+2022-05-19 08:31:59,035 p=6260 u=ubuntu n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2022-05-19 08:32:00,343 p=6260 u=ubuntu n=ansible | ok: [localhost]
+2022-05-19 08:32:00,360 p=6260 u=ubuntu n=ansible | TASK [Install  jdk, maven, git] **********************************************************************************************************************************************************************************
+2022-05-19 08:32:06,330 p=6260 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2022-05-19 08:32:08,038 p=6260 u=ubuntu n=ansible | ok: [localhost] => (item=openjdk-8-jdk)
+2022-05-19 08:32:09,734 p=6260 u=ubuntu n=ansible | ok: [localhost] => (item=maven)
+2022-05-19 08:32:09,746 p=6260 u=ubuntu n=ansible | TASK [Clone source code from github] *****************************************************************************************************************************************************************************
+2022-05-19 08:32:10,833 p=6260 u=ubuntu n=ansible | ok: [localhost]
+2022-05-19 08:32:10,844 p=6260 u=ubuntu n=ansible | TASK [mvn install command to build artifact] *********************************************************************************************************************************************************************
+2022-05-19 08:32:10,875 p=6260 u=ubuntu n=ansible | skipping: [localhost]
+2022-05-19 08:32:10,886 p=6260 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] *************************************************************************************************************************************************************************
+2022-05-19 08:32:12,356 p=6260 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2022-05-19 08:32:12,366 p=6260 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] **************************************************************************************************************************************************************************
+2022-05-19 08:32:12,786 p=6260 u=ubuntu n=ansible | changed: [localhost]
+2022-05-19 08:32:12,803 p=6260 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:32:12,803 p=6260 u=ubuntu n=ansible | localhost                  : ok=5    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2022-05-19 08:40:44,974 p=7426 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-pro as an inventory source
+
+2022-05-19 08:40:44,975 p=7426 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:40:44,978 p=7426 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:40:45,134 p=7426 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 08:40:45,134 p=7426 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 08:40:45,135 p=7426 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:45:27,576 p=7458 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-pro as an inventory source
+
+2022-05-19 08:45:27,576 p=7458 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:45:27,580 p=7458 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:45:27,734 p=7458 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 08:45:27,734 p=7458 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 08:45:27,734 p=7458 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:49:34,607 p=7480 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-pro as an inventory source
+
+2022-05-19 08:49:34,607 p=7480 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:49:34,611 p=7480 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:49:34,765 p=7480 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 08:49:34,766 p=7480 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 08:49:34,766 p=7480 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:53:07,334 p=7501 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 08:53:07,335 p=7501 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:53:07,338 p=7501 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:53:07,491 p=7501 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 08:53:07,491 p=7501 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 08:53:07,491 p=7501 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:54:37,255 p=7516 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 08:54:37,255 p=7516 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:54:37,259 p=7516 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:54:37,415 p=7516 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 08:54:37,415 p=7516 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 08:54:37,415 p=7516 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 08:56:11,478 p=7520 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 08:56:11,479 p=7520 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:56:11,482 p=7520 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:56:11,483 p=7520 u=ubuntu n=ansible |   hosts (0):
+2022-05-19 08:56:40,179 p=7526 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 08:56:40,180 p=7526 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 08:56:40,183 p=7526 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 08:56:40,338 p=7526 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 08:56:40,338 p=7526 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 08:56:40,339 p=7526 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 09:01:04,783 p=7565 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 09:01:04,784 p=7565 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 09:01:04,787 p=7565 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 09:01:04,940 p=7565 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 09:01:04,940 p=7565 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 09:01:04,940 p=7565 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 09:01:23,215 p=7568 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 09:01:23,215 p=7568 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 09:01:23,219 p=7568 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 09:01:23,377 p=7568 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 09:01:23,377 p=7568 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 09:01:23,377 p=7568 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 09:03:00,942 p=7575 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory_pro as an inventory source
+
+2022-05-19 09:03:00,942 p=7575 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-05-19 09:03:00,946 p=7575 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-05-19 09:03:01,102 p=7575 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 09:03:01,102 p=7575 u=ubuntu n=ansible | skipping: no hosts matched
+2022-05-19 09:03:01,103 p=7575 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 09:03:34,682 p=7579 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] *******************************************************************************************************************************
+2022-05-19 09:03:34,691 p=7579 u=ubuntu n=ansible | TASK [Gathering Facts] *******************************************************************************************************************************************************************************************
+2022-05-19 09:03:36,376 p=7579 u=ubuntu n=ansible | ok: [web01]
+2022-05-19 09:03:36,434 p=7579 u=ubuntu n=ansible | ok: [cntl]
+2022-05-19 09:03:37,158 p=7579 u=ubuntu n=ansible | ok: [app01]
+2022-05-19 09:03:37,764 p=7579 u=ubuntu n=ansible | ok: [rmq01]
+2022-05-19 09:03:37,951 p=7579 u=ubuntu n=ansible | ok: [mc01]
+2022-05-19 09:03:39,049 p=7579 u=ubuntu n=ansible | ok: [db01]
+2022-05-19 09:03:39,067 p=7579 u=ubuntu n=ansible | TASK [Import VPC setup Variable] *********************************************************************************************************************************************************************************
+2022-05-19 09:03:39,112 p=7579 u=ubuntu n=ansible | ok: [cntl]
+2022-05-19 09:03:39,132 p=7579 u=ubuntu n=ansible | ok: [web01]
+2022-05-19 09:03:39,152 p=7579 u=ubuntu n=ansible | ok: [app01]
+2022-05-19 09:03:39,175 p=7579 u=ubuntu n=ansible | ok: [rmq01]
+2022-05-19 09:03:39,176 p=7579 u=ubuntu n=ansible | ok: [mc01]
+2022-05-19 09:03:39,182 p=7579 u=ubuntu n=ansible | ok: [db01]
+2022-05-19 09:03:39,192 p=7579 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ***********************************************************************************************************************************************************************
+2022-05-19 09:03:40,031 p=7579 u=ubuntu n=ansible | changed: [mc01]
+2022-05-19 09:03:40,032 p=7579 u=ubuntu n=ansible | changed: [web01]
+2022-05-19 09:03:40,033 p=7579 u=ubuntu n=ansible | changed: [rmq01]
+2022-05-19 09:03:40,033 p=7579 u=ubuntu n=ansible | changed: [app01]
+2022-05-19 09:03:40,103 p=7579 u=ubuntu n=ansible | changed: [cntl]
+2022-05-19 09:03:40,353 p=7579 u=ubuntu n=ansible | changed: [db01]
+2022-05-19 09:03:40,371 p=7579 u=ubuntu n=ansible | PLAY RECAP *******************************************************************************************************************************************************************************************************
+2022-05-19 09:03:40,371 p=7579 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 09:03:40,371 p=7579 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 09:03:40,371 p=7579 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 09:03:40,372 p=7579 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 09:03:40,372 p=7579 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 09:03:40,372 p=7579 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
